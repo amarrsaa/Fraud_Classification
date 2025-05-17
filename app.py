@@ -2,7 +2,7 @@
 import streamlit as st
 import os
 import tempfile
-from fraud_classifier import (
+from utils import (
     classify_english_message,
     classify_english_audio,
     predict_hindi_call_from_audio,
