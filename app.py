@@ -34,7 +34,10 @@ with tab1:
             st.warning("Please enter some text.")
         else:
             if language == "english":
-                result = classify_english_message(sms_input)
+                msg_model=tf.keras.models.load_model("msg_model.h5")
+                with open("msg_tokenizer.pkl", "rb") as f:
+                    msg_tokenizer = pickle.load(f)
+                result = classify_english_message(sms_input,msg_model=msg_model,msg_tokenizer=msg_tokenizer)
                 st.success(f"Prediction: {result}")
             else:
                 model = get_sms_model(language)
