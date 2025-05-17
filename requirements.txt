@@ -1,0 +1,7 @@
+streamlit
+scikit-learn
+tensorflow
+joblib
+pandas
+numpy
+speechrecognition
