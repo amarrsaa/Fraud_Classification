@@ -18,29 +18,29 @@ import speech_recognition as sr
 # -------------------- Constants --------------------
 
 DATA_PATHS = {
-    "hindi_sms": "C:\Users\amart\Desktop\python codes\hindi_sms_dataset.csv",
-    "telugu_sms": "C:\Users\amart\Desktop\python codes\telugu_sms_dataset.csv",
-    "hindi_call": "C:\Users\amart\Desktop\python codes\hindi_call_records_dataset.csv",
-    "telugu_call": "C:\Users\amart\Desktop\python codes\telugu_call_dataset.csv",
+    "hindi_sms": "hindi_sms_dataset.csv",
+    "telugu_sms": "telugu_sms_dataset.csv",
+    "hindi_call": "hindi_call_records_dataset.csv",
+    "telugu_call": "telugu_call_dataset.csv",
 }
 
 MODEL_PATHS = {
-    "hindi_sms": "C:\Users\amart\Desktop\python codes\hindi_fraud_classifier.pkl",
-    "telugu_sms": "C:\Users\amart\Desktop\python codes\telugu_fraud_classifier.pkl",
+    "hindi_sms": "hindi_fraud_classifier.pkl",
+    "telugu_sms": "telugu_fraud_classifier.pkl",
     "hindi_call": {
-        "model": "C:\Users\amart\Desktop\python codes\hindi_fraud_model.pkl",
-        "vectorizer": "C:\Users\amart\Desktop\python codes\hindi_vectorizer.pkl"
+        "model": "hindi_fraud_model.pkl",
+        "vectorizer": "hindi_vectorizer.pkl"
     },
     "telugu_call": {
-        "model": "C:\Users\amart\Desktop\python codes\telugu_fraud_classifier.pkl",
-        "tokenizer": "C:\Users\amart\Desktop\python codes\tokenizer.pkl"
+        "model": "telugu_fraud_classifier.pkl",
+        "tokenizer": "tokenizer.pkl"
     }
 }
 
-CALL_MODEL_PATH_EN = "C:\Users\amart\Desktop\python codes\call_model.h5"
-MSG_MODEL_PATH_EN = "C:\Users\amart\Desktop\python codes\msg_model.h5"
-CALL_TOKENIZER_PATH_EN = "C:\Users\amart\Desktop\python codes\call_tokenizer.pkl"
-MSG_TOKENIZER_PATH_EN = "C:\Users\amart\Desktop\python codes\msg_tokenizer.pkl"
+CALL_MODEL_PATH_EN = "call_model.h5"
+MSG_MODEL_PATH_EN = "msg_model.h5"
+CALL_TOKENIZER_PATH_EN = "call_tokenizer.pkl"
+MSG_TOKENIZER_PATH_EN = "msg_tokenizer.pkl"
 
 # -------------------- Load English Models --------------------
 def load_sms_dataset(language):
