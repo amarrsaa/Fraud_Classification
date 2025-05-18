@@ -47,7 +47,7 @@ with tab1:
                 result = classify_english_message(sms_input, english_msg_model, english_msg_tokenizer)
                 st.success(f"Prediction: {result}")
             else:
-                model = get_sms_model(language)
+                model = get_sms_model(language+"_sms")
                 if model is None:
                     st.error(f"Cannot classify SMS because dataset/model for '{language}' is missing.")
                 else:
