@@ -43,6 +43,12 @@ CALL_TOKENIZER_PATH_EN = "call_tokenizer.pkl"
 MSG_TOKENIZER_PATH_EN = "msg_tokenizer.pkl"
 
 # -------------------- Load English Models --------------------
+def load_sms_dataset(language):
+    key = language.lower()
+    path = DATA_PATHS.get(key)
+    if not path or not os.path.exists(path):
+        raise FileNotFoundError(f"Dataset for '{language}' not found at: {path}")
+    return pd.read_csv(path)
 
 def load_english_models():
     call_model = load_model(CALL_MODEL_PATH_EN)
@@ -80,11 +86,12 @@ def classify_english_audio(audio_path, call_model, call_tokenizer):
 
 # -------------------- SMS Classification --------------------
 
-def load_sms_dataset(language):
-    key = f"{language}_sms"
-    df = pd.read_csv(DATA_PATHS[key])
-    assert 'Text' in df.columns and 'Label' in df.columns, "Dataset must contain 'Text' and 'Label' columns"
-    return df
+#def load_sms_dataset(language):
+#    key = f"{language}_sms"
+#    df = pd.read_csv(DATA_PATHS[key])
+ #   assert 'Text' in df.columns and 'Label' in df.columns, "Dataset must contain 'Text' and 'Label' columns"
+  #  return df
+
 
 def train_or_load_sms_model(df, language):
     filename = MODEL_PATHS[f"{language}_sms"]
