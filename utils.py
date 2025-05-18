@@ -94,7 +94,7 @@ def classify_english_audio(audio_path, call_model, call_tokenizer):
 
 
 def train_or_load_sms_model(df, language):
-    filename = MODEL_PATHS[f"{language}_sms"]
+    filename = MODEL_PATHS[f"{language}"]
     if os.path.exists(filename):
         return joblib.load(filename)
 
